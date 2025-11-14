@@ -1,9 +1,9 @@
 package personnages;
 
 public class Humain {
-	private String nom;
-	private String boisson;
-	private int argent;
+	protected String nom;
+	protected String boisson;
+	protected int argent;
 	
 	
 	
@@ -23,7 +23,7 @@ public class Humain {
 	}
 	
 	public void direBonjour() {
-		parler("Bonjour ! Je m'appelle " + this.nom + "et j'aime boire du " + this.boisson);
+		parler("Bonjour ! Je m'appelle " + this.nom + " et j'aime boire du " + this.boisson);
 	}
 	
 	public void boire() {
