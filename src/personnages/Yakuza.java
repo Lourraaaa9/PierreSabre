@@ -15,6 +15,7 @@ public class Yakuza extends Humain {
 		int sous = victime.seFaireExtorquer();
 		this.argent+=sous;
 		parler("J'ai piqué les " + sous + " sous de " + victime.nom + ", ce qui me fait " +this.argent + " sous dans ma poche. Hi ! Hi !");
+		this.reputation+=1;
 	
 	}
 
