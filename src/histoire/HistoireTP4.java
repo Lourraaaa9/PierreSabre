@@ -6,6 +6,8 @@ public class HistoireTP4 {
 	
 	
 	public static void main(String[] args) {
+		System.out.println("---------------tp4--------------------");
+
 		Humain prof = new Humain("Prof","Kombucha",54);
 		prof.direBonjour();
 		prof.acheter("boisson", 12);

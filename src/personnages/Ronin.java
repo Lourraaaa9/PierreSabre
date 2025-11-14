@@ -8,10 +8,10 @@ public class Ronin extends Humain {
 	}
 	
 	public void donner(Commercant beneficiaire) {
-		int don = (int) (this.argent*0.1);
-		parler(beneficiaire.nom + " prend ces " + don + " sous.");
+		int don = (int) (this.getArgent()*0.1);
+		parler(beneficiaire.getNom() + " prend ces " + don + " sous.");
 		beneficiaire.recevoir(don);
-		this.argent-=don;
+		this.perdreArgent(don);
 	}
 	
 	public void provoquer(Yakuza adversaire) {
@@ -19,12 +19,13 @@ public class Ronin extends Humain {
 		if (honneur*2>=adversaire.getReputation()) {
 			this.honneur+=1;
 			parler("Je t'ai eu petit yakusa !");
-			this.argent+=adversaire.perdre();
+			this.gagnerArgent(adversaire.perdre());
 		}else {
 			this.honneur-=1;
 			parler("J'ai perdu contre ce yakuza, mon honneur et ma bourse en ont pris un coup.");
-			adversaire.gagner(this.argent);
-			this.argent=0;
+			int argent=getArgent();
+			adversaire.gagner(argent);
+			this.perdreArgent(argent);
 		}
 	}
 	
